@@ -428,6 +428,31 @@ body {
 .glow-cyan     { box-shadow: 0 0 20px var(--cyan-glow); }
 .glow-amber    { box-shadow: 0 0 20px var(--amber-glow); }
 
+/* ─── Dashboard layout ───────────────────────────── */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid var(--glass-border);
+}
+
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — Mobile & Tablet
 ════════════════════════════════════════════════════ */
@@ -443,6 +468,36 @@ body {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow: auto !important;
+    height: auto !important;
+  }
+
+  .app-shell {
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
+  }
+
+  /* Dashboard — form on top, pipeline below */
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    overflow-y: visible !important;
+  }
+
+  .dashboard-left {
+    height: auto !important;
+    overflow-y: visible !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+  }
+
+  .dashboard-right {
+    height: auto !important;
+    overflow-y: visible !important;
+  }
+
   .app-sidebar {
     position: fixed !important;
     top: 0;

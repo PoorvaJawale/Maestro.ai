@@ -78,16 +78,10 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", height: "100%" }}>
+    <div className="dashboard-grid">
 
       {/* ══════════ LEFT: Idea Form ══════════════ */}
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        overflowY: "auto",
-        borderRight: "1px solid var(--glass-border)",
-      }}>
+      <div className="dashboard-left">
         {/* Header */}
         <div style={{
           padding: "28px 32px 20px",
@@ -272,13 +266,7 @@ export default function Dashboard() {
       </div>
 
       {/* ══════════ RIGHT: Agent Preview ═════════ */}
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        overflowY: "auto",
-        background: "rgba(0,0,0,0.1)",
-      }}>
+      <div className="dashboard-right">
         {/* Header */}
         <div style={{
           padding: "28px 32px 20px",
